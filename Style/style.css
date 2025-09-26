@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Fira';
+  src: url('/font/FiraSans-Italic.ttf') format('truetype');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header h1{
+    text-align: center;
+    color: #FFF;
+    font-size: 300px;
+    margin-top: 20%;    
+    font-family: 'Fira';
+}
