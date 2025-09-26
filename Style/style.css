@@ -14,3 +14,15 @@ header h1{
     margin-top: 20%;    
     font-family: 'Fira';
 }
+
+.img-group img{
+    width: 75px;
+    height: 75px;
+}
+
+.project{
+  display: flex;
+  flex-direction: row;
+  gap: 75px;
+  text-align: center;
+}

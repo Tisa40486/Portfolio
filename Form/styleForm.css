@@ -7,21 +7,22 @@
     font-size: 20px;
     color: white;
 }
-.form-container textarea{
+
+.form-container textarea {
     background-color: transparent;
     border: 3px solid #ddd;
     border-radius: 8px;
     color: white;
     font-size: 20px;
 }
-    
+
 .form-container {
     display: flex;
     flex-direction: column;
     max-width: 400px;
     margin: 0 auto;
     gap: 1rem;
-    
+
 }
 
 .form-group {
@@ -36,6 +37,15 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
+}
+
+.form-group input {
+    border-radius: 8px;
+    background-color: transparent;
+}
+
+.form-group label {
+    color: white;
 }
 
 label {
@@ -76,4 +86,13 @@ body h1 {
     font-size: 50px;
     font-family: fira;
     color: #FFF;
+}
+
+.img-group img {
+    width: 75px;
+    height: 75px;
+
+}
+.checkbox{
+    text-align: center;
 }
