@@ -24,6 +24,11 @@ Header h1 {
 
 }
 
+.container-fluid img {
+  width: auto;
+  height: 50px;
+}
+
 main h1 {
   text-align: center;
   color: #FFF;
@@ -38,6 +43,7 @@ main h1 {
 }
 
 .project {
+  margin-top: 5%;
   display: flex;
   flex-direction: row;
   gap: 75px;
@@ -45,16 +51,18 @@ main h1 {
 }
 
 .card {
- width: 190px;
- height: 254px;
- border-radius: 50px;
- background: #e0e0e0;
- box-shadow: 20px 20px 60px #bebebe,
-               -20px -20px 60px #ffffff;
+  width: 190px;
+  height: 254px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
 }
 
-.card a {
-  width: 100%;
+.card-body h5 {
+  text-align: center;
+}
+.card-body p{
+  text-align: center;
 }
 
 .card-title {
