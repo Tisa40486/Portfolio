@@ -1,3 +1,8 @@
+/**
+ * @section Variables Globales (Custom Properties)
+ * @description Définit la palette de couleurs, la police et d'autres valeurs réutilisables
+ * pour tout le site. Facilite la maintenance et la mise en place d'un thème (ex: mode sombre).
+ */
 :root {
   --background-color: #f5f5f7;
   --card-background: #ffffff;
@@ -9,16 +14,35 @@
   --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
+/**
+ * @section Reset CSS Universel
+ * @description Applique un reset de base à tous les éléments (*).
+ * - `margin: 0; padding: 0;` supprime les marges et paddings par défaut des navigateurs.
+ * - `box-sizing: border-box;` change le modèle de boîte pour que le padding et la bordure
+ * soient inclus dans la largeur/hauteur totale de l'élément, ce qui simplifie la mise en page.
+ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/**
+ * @section Styles HTML
+ * @description Active le défilement fluide (`scroll-behavior`) lorsqu'on navigue
+ * vers des ancres (liens internes comme `#contact`).
+ */
 html {
   scroll-behavior: smooth;
 }
 
+/**
+ * @section Styles du Body
+ * @description Définit les styles de base pour l'ensemble du document.
+ * - Applique la police, la couleur de fond et la couleur de texte définies dans :root.
+ * - `line-height` améliore la lisibilité du texte.
+ * - `transition` permet un changement en douceur des couleurs lors du passage en mode sombre.
+ */
 body {
   font-family: var(--font-family);
   background-color: var(--background-color);
@@ -27,32 +51,57 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/**
+ * @section Classe Utilitaire : Container
+ * @description Centre le contenu de la page.
+ * - `max-width` définit une largeur maximale pour le contenu.
+ * - `margin: 0 auto;` centre horizontalement le conteneur.
+ * - `padding` empêche le contenu de toucher les bords de l'écran sur les petits appareils.
+ */
 .container {
   max-width: 1080px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
+/**
+ * @section Barre de Navigation (Navbar)
+ * @description Style de la barre de navigation principale.
+ * - `position: sticky; top: 0;` la fait rester collée en haut de la page lors du défilement.
+ * - `backdrop-filter: blur(10px);` crée un effet de verre dépoli (flou) sur l'arrière-plan.
+ * - `z-index: 100;` s'assure qu'elle reste au-dessus des autres contenus.
+ */
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  --nav-bg: rgba(255, 255, 255, 0.7);
+  --nav-bg: rgba(255, 255, 255, 0.7); /* Variable locale pour la couleur de fond */
   background-color: var(--nav-bg);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* Pour la compatibilité avec Safari */
   border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
   z-index: 100;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
+/**
+ * @section Conteneur de la Navbar
+ * @description Gère l'alignement des éléments (logo, menu) à l'intérieur de la navbar.
+ * - `display: flex;` active le modèle de boîte flexible.
+ * - `justify-content: space-between;` place les éléments aux extrémités (logo à gauche, menu à droite).
+ * - `align-items: center;` aligne verticalement les éléments au centre.
+ */
 .navbar .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/**
+ * @section Logo de la Navbar
+ * @description Style du logo.
+ */
 .nav-logo {
   font-weight: 600;
   font-size: 1.2rem;
@@ -60,6 +109,12 @@ body {
   color: var(--primary-text-color);
 }
 
+/**
+ * @section Menu de Navigation
+ * @description Style de la liste (ul) contenant les liens de navigation.
+ * - `display: flex;` aligne les liens horizontalement.
+ * - `gap` ajoute un espacement entre chaque lien.
+ */
 .nav-menu {
   list-style: none;
   display: flex;
@@ -67,6 +122,10 @@ body {
   gap: 1.5rem;
 }
 
+/**
+ * @section Liens du Menu de Navigation
+ * @description Style des liens individuels (a) dans le menu.
+ */
 .nav-menu a {
   text-decoration: none;
   color: var(--secondary-text-color);
@@ -74,10 +133,20 @@ body {
   transition: color 0.3s ease;
 }
 
+/**
+ * @section Effet au survol des liens du menu
+ * @description Change la couleur du lien au passage de la souris.
+ */
 .nav-menu a:hover {
   color: var(--accent-color);
 }
 
+/**
+ * @section Bouton dans la Navbar
+ * @description Style d'un bouton spécial dans la navbar (ex: "Contact").
+ * - `color: white !important;` force la couleur du texte à être blanche, même si c'est un lien.
+ * - `border-radius: 20px;` crée des bords très arrondis (style "pilule").
+ */
 .nav-button {
   background-color: var(--accent-color);
   color: white !important;
@@ -86,29 +155,50 @@ body {
   transition: opacity 0.3s ease, background-color 0.3s ease;
 }
 
+/**
+ * @section Effet au survol du bouton de la Navbar
+ * @description Réduit l'opacité pour donner un retour visuel.
+ */
 .nav-button:hover {
   opacity: 0.8;
 }
 
+/**
+ * @section Section "Hero"
+ * @description Style de la section principale en haut de la page (bannière).
+ * - `padding: 8rem 0;` crée un grand espacement vertical pour mettre en valeur le contenu.
+ */
 .hero {
   text-align: center;
   padding: 8rem 0;
 }
 
+/**
+ * @section Titre de la section Hero
+ * @description Style du titre principal de la page.
+ */
 .hero-title {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  letter-spacing: -1px;
+  letter-spacing: -1px; /* Rapproche légèrement les lettres pour un look plus compact. */
 }
 
+/**
+ * @section Sous-titre de la section Hero
+ * @description Style du texte descriptif sous le titre principal.
+ */
 .hero-subtitle {
   font-size: 1.5rem;
   color: var(--secondary-text-color);
   max-width: 600px;
-  margin: 0 auto 2rem auto;
+  margin: 0 auto 2rem auto; /* Centre le bloc et ajoute une marge en bas. */
 }
 
+/**
+ * @section Bouton d'Appel à l'Action (CTA)
+ * @description Style du bouton principal (ex: "Découvrir mes projets").
+ */
 .cta-button {
   display: inline-block;
   background-color: var(--accent-color);
@@ -120,29 +210,55 @@ body {
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/**
+ * @section Effet au survol du bouton CTA
+ * @description Agrandit légèrement le bouton (`scale`) pour un effet dynamique.
+ */
 .cta-button:hover {
   transform: scale(1.05);
 }
 
+/**
+ * @section Classe Utilitaire : Titre de Section
+ * @description Style réutilisable pour les titres des différentes sections de la page.
+ */
 .section-title {
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 3rem;
 }
 
+/**
+ * @section Section des Projets
+ * @description Conteneur pour la galerie de projets. Ajoute de l'espacement vertical.
+ */
 .projects-section {
   padding: 6rem 0;
 }
 
+/**
+ * @section Grille des Projets
+ * @description Gère la disposition des cartes de projet.
+ * - `display: grid;` active le modèle de grille CSS.
+ * - `grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));` crée une grille responsive :
+ * les colonnes ont une largeur minimale de 320px et s'adaptent automatiquement à l'espace disponible.
+ */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
 }
 
+/**
+ * @section Carte de Projet
+ * @description Style pour chaque carte individuelle présentant un projet.
+ * - Utilise `backdrop-filter` pour l'effet de verre dépoli.
+ * - `border-radius` arrondit les coins.
+ * - `box-shadow` ajoute une ombre subtile pour un effet de profondeur.
+ * - `overflow: hidden;` empêche l'image de dépasser les coins arrondis.
+ */
 .project-card {
   background-color: rgba(255, 255, 255, 0.7);
-  /* Effet verre */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -152,11 +268,21 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+/**
+ * @section Effet au survol de la carte de projet
+ * @description Soulève la carte (`translateY`) et accentue l'ombre pour un effet 3D.
+ */
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/**
+ * @section Image du Projet
+ * @description Style de l'image à l'intérieur de la carte.
+ * - `aspect-ratio` maintient un ratio 16/10 constant, peu importe la largeur.
+ * - `object-fit: cover;` assure que l'image remplit l'espace sans être déformée.
+ */
 .project-image {
   width: 100%;
   display: block;
@@ -164,20 +290,37 @@ body {
   object-fit: cover;
 }
 
+/**
+ * @section Contenu de la Carte de Projet
+ * @description Zone de texte sous l'image dans une carte. Ajoute un padding interne.
+ */
 .project-content {
   padding: 1.5rem;
 }
 
+/**
+ * @section Titre du Projet
+ * @description Style du titre à l'intérieur de la carte.
+ */
 .project-title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
+/**
+ * @section Description du Projet
+ * @description Style du texte descriptif du projet.
+ */
 .project-description {
   color: var(--secondary-text-color);
   margin-bottom: 1rem;
 }
 
+/**
+ * @section "Tags" du Projet
+ * @description Conteneur pour les tags (ex: React, CSS).
+ * - `display: flex; flex-wrap: wrap;` permet aux tags de passer à la ligne si l'espace manque.
+ */
 .project-tags {
   display: flex;
   flex-wrap: wrap;
@@ -185,6 +328,10 @@ body {
   margin-bottom: 1.5rem;
 }
 
+/**
+ * @section Style d'un Tag
+ * @description Style individuel pour chaque tag de compétence.
+ */
 .tag {
   background-color: var(--tag-background);
   color: var(--secondary-text-color);
@@ -195,6 +342,11 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/**
+ * @section Liens du Projet (GitHub, Site web)
+ * @description Style des liens externes liés au projet.
+ * - `display: inline-flex;` permet d'aligner une icône avec le texte du lien.
+ */
 .project-links a {
   color: var(--accent-color);
   text-decoration: none;
@@ -205,10 +357,18 @@ body {
   gap: 0.3rem;
 }
 
+/**
+ * @section Icônes dans les Liens du Projet
+ * @description Ajuste la taille des icônes (ici, Material Symbols).
+ */
 .project-links .material-symbols-outlined {
   font-size: 1rem;
 }
 
+/**
+ * @section Section Contact
+ * @description Style de la section d'appel au contact.
+ */
 .contact-section {
   text-align: center;
   padding: 6rem 0;
@@ -216,36 +376,66 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/**
+ * @section Paragraphe de la Section Contact
+ * @description Style du texte d'incitation au contact.
+ */
 .contact-section p {
   font-size: 1.2rem;
   color: var(--secondary-text-color);
   margin-bottom: 2rem;
 }
 
+/**
+ * @section Pied de Page (Footer)
+ * @description Style général du pied de page.
+ */
 .footer {
   text-align: center;
   padding: 2rem 0;
 }
 
+/**
+ * @section Liens du Pied de Page
+ * @description Conteneur pour les liens du footer (ex: réseaux sociaux).
+ */
 .footer-links {
   margin-bottom: 1rem;
 }
 
+/**
+ * @section Liens individuels du Pied de Page
+ * @description Style des liens dans le footer.
+ */
 .footer-links a {
   margin: 0 1rem;
   text-decoration: none;
   color: var(--secondary-text-color);
 }
 
+/**
+ * @section Texte de Copyright du Pied de Page
+ * @description Style du petit texte en bas de page.
+ */
 .footer p {
   font-size: 0.9rem;
   color: var(--secondary-text-color);
 }
 
+/**
+ * @section Section du Formulaire
+ * @description Ajoute de l'espacement autour du formulaire de contact.
+ */
 .form-section {
   padding: 3rem 0 6rem 0;
 }
 
+/**
+ * @section Conteneur du Formulaire
+ * @description Style de la "carte" qui entoure le formulaire.
+ * - Utilise `backdrop-filter` pour un effet de verre, comme les cartes de projet.
+ * - `max-width` et `margin: auto` le centrent et limitent sa largeur.
+ */
 .form-wrapper {
   max-width: 700px;
   margin: auto;
@@ -259,10 +449,18 @@ body {
   transition: background-color 0.3s ease;
 }
 
+/**
+ * @section Groupe de Formulaire
+ * @description Espace vertical entre chaque champ du formulaire (label + input).
+ */
 .form .form-group {
   margin-bottom: 1.5rem;
 }
 
+/**
+ * @section Étiquette (Label) du Formulaire
+ * @description Style du texte au-dessus de chaque champ de saisie.
+ */
 .form label {
   display: block;
   font-weight: 500;
@@ -270,6 +468,10 @@ body {
   color: var(--primary-text-color);
 }
 
+/**
+ * @section Champ de Saisie (Input, Textarea)
+ * @description Style commun pour les champs de texte du formulaire.
+ */
 .form .input {
   width: 100%;
   padding: 14px;
@@ -282,17 +484,32 @@ body {
   transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
+/**
+ * @section Texte d'Aide (Placeholder)
+ * @description Style du texte indicatif dans les champs de saisie.
+ */
 .form .input::placeholder {
   color: var(--secondary-text-color);
   opacity: 0.8;
 }
 
+/**
+ * @section Effet au Focus d'un champ de saisie
+ * @description Style appliqué lorsqu'un utilisateur clique dans un champ.
+ * - `outline: none;` supprime le contour par défaut.
+ * - `border-color` change la couleur de la bordure.
+ * - `box-shadow` ajoute une lueur subtile pour indiquer le focus.
+ */
 .form .input:focus {
   outline: none;
   border-color: var(--accent-color);
   box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
 }
 
+/**
+ * @section Bouton de Soumission du Formulaire
+ * @description Style du bouton "Envoyer".
+ */
 .submit-button {
   width: 100%;
   background-color: var(--accent-color);
@@ -307,13 +524,27 @@ body {
   transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
+/**
+ * @section Effet au survol du bouton de soumission
+ * @description Réduit l'opacité au passage de la souris.
+ */
 .submit-button:hover {
   opacity: 0.8;
 }
 
+/**
+ * @section Effet au clic du bouton de soumission
+ * @description Réduit légèrement la taille du bouton pour un retour visuel lors du clic.
+ */
 .submit-button:active {
   transform: scale(0.98);
 }
+
+/**
+ * @section Styles pour une Checkbox personnalisée
+ * @description Ensemble de règles pour créer une case à cocher stylisée
+ * qui remplace celle par défaut du navigateur.
+ */
 
 .checkbox-wrapper-33 {
   margin-bottom: 1rem;
@@ -324,7 +555,6 @@ body {
   align-items: center;
   cursor: pointer;
 }
-
 .visuallyhidden {
   position: absolute;
   width: 1px;
@@ -335,7 +565,6 @@ body {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-
 .checkbox__symbol {
   display: inline-flex;
   justify-content: center;
@@ -347,7 +576,6 @@ body {
   margin-right: 12px;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
-
 .icon-checkbox {
   fill: none;
   stroke: white;
@@ -357,66 +585,94 @@ body {
   transform: scale(0);
   transition: transform 0.2s ease-in-out;
 }
-
 .checkbox__textwrapper {
   margin: 0;
-  user-select: none;
+  user-select: none; 
 }
-
-.checkbox__trigger:checked+.checkbox__symbol {
+.checkbox__trigger:checked + .checkbox__symbol {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
-
-.checkbox__trigger:checked+.checkbox__symbol .icon-checkbox {
+.checkbox__trigger:checked + .checkbox__symbol .icon-checkbox {
   transform: scale(1);
 }
-
-.checkbox__trigger:focus+.checkbox__symbol {
+.checkbox__trigger:focus + .checkbox__symbol {
   box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
 }
 
-
+/**
+ * @section Section "À Propos"
+ * @description Conteneur de la section présentant l'auteur.
+ */
 .about-section {
   padding: 3rem 0 6rem 0;
 }
 
+/**
+ * @section Grille de la section "À Propos"
+ * @description Sépare le contenu en deux colonnes : texte à gauche, compétences à droite.
+ */
 .about-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr; /* La colonne de texte est 2x plus large. */
   gap: 4rem;
   align-items: start;
 }
 
+/**
+ * @section Titres de la section "À Propos"
+ * @description Style des titres H2 dans cette section.
+ */
 .about-text h2,
 .about-skills h2 {
   font-size: 1.8rem;
   margin-bottom: 1.5rem;
 }
 
+/**
+ * @section Paragraphes de la section "À Propos"
+ * @description Style des textes descriptifs.
+ */
 .about-text p {
   color: var(--secondary-text-color);
   line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 
+/**
+ * @section Lien dans la section "À Propos"
+ * @description Style d'un lien spécifique dans le texte.
+ */
 .about-link {
   text-decoration: none;
   color: black;
 }
 
+/**
+ * @section Liste des Compétences
+ * @description Style de la liste (ul) des compétences.
+ */
 .skills-list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+/**
+ * @section Élément de la Liste des Compétences
+ * @description Style de chaque compétence (li), avec une ligne de séparation.
+ */
 .skills-list li {
   padding: 0.8rem 0;
-  border-bottom: 1px solid var(--border-color-light);
+  border-bottom: 1px solid var(--border-color); /* Note: --border-color-light n'est pas défini, j'utilise --border-color */
   transition: border-color 0.3s ease;
 }
 
+/**
+ * @section Media Queries (Design Responsive)
+ * @description Adapte la mise en page pour les écrans plus petits (tablettes et mobiles).
+ * La règle s'applique quand la largeur de l'écran est de 768px ou moins.
+ */
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -435,7 +691,13 @@ body {
   }
 }
 
+/**
+ * @section Thème Sombre (Dark Mode)
+ * @description Applique des styles spécifiques lorsque le système d'exploitation de l'utilisateur
+ * est configuré en mode sombre.
+ */
 @media (prefers-color-scheme: dark) {
+  /* Redéfinit les variables de couleurs pour le mode sombre. */
   :root {
     --background-color: #1c1c1e;
     --card-background: #2c2c2e;
@@ -445,6 +707,7 @@ body {
     --border-color: #424245;
     --tag-background: #3a3a3c;
   }
+
 
   .navbar {
     --nav-bg: rgba(28, 28, 30, 0.7);
