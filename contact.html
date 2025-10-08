@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/Style/style.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -15,7 +17,7 @@
             <ul class="nav-menu">
                 <li><a href="/project.html">Projects</a></li>
                 <li><a href="/about.html">About</a></li>
-                <li><a href="/Form/contact.html" class="nav-button">Contact</a></li>
+                <li><a href="/contact.html" class="nav-button">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -49,37 +51,37 @@
                         </div>
                         <div class="form-group">
                             <label for="tel">Phone</label>
-                            <input class="input" type="tel" id="tel"  placeholder="079 123 45 67">
+                            <input class="input" type="tel" id="tel" placeholder="079 123 45 67">
+                        </div>
+                        <div class="PrefContact">
+                            <div class="heading">Preference de contact</div>
+                            <div class="checkbox-wrapper-33">
+                                <label class="checkbox">
+                                    <input class="checkbox__trigger visuallyhidden" type="checkbox" />
+                                    <span class="checkbox__symbol">
+                                        <svg aria-hidden="true" class="icon-checkbox" width="28px" height="28px"
+                                            viewBox="0 0 28 28">
+                                            <path d="M4 14l8 7L24 7"></path>
+                                        </svg>
+                                    </span>
+                                    <p class="checkbox__textwrapper">Email</p>
+                                </label>
                             </div>
-                            <div class="PrefContact">
-                                <div class="heading">Preference de contact</div>
-                                <div class="checkbox-wrapper-33">
-                                    <label class="checkbox">
-                                        <input class="checkbox__trigger visuallyhidden" type="checkbox" />
-                                        <span class="checkbox__symbol">
-                                            <svg aria-hidden="true" class="icon-checkbox" width="28px" height="28px"
-                                                viewBox="0 0 28 28">
-                                                <path d="M4 14l8 7L24 7"></path>
-                                            </svg>
-                                        </span>
-                                        <p class="checkbox__textwrapper">Email</p>
-                                    </label>
-                                </div>
 
-                                <div class="checkbox-wrapper-33">
-                                    <label class="checkbox">
-                                        <input class="checkbox__trigger visuallyhidden" type="checkbox" checked />
-                                        <span class="checkbox__symbol">
-                                            <svg aria-hidden="true" class="icon-checkbox" width="28px" height="28px"
-                                                viewBox="0 0 28 28">
-                                                <path d="M4 14l8 7L24 7"></path>
-                                            </svg>
-                                        </span>
-                                        <p class="checkbox__textwrapper">Phone (checked by default)</p>
-                                    </label>
-                                </div>
-                                </fieldset>
-                                <button type="submit" class="submit-button">Confirmer</button>
+                            <div class="checkbox-wrapper-33">
+                                <label class="checkbox">
+                                    <input class="checkbox__trigger visuallyhidden" type="checkbox" checked />
+                                    <span class="checkbox__symbol">
+                                        <svg aria-hidden="true" class="icon-checkbox" width="28px" height="28px"
+                                            viewBox="0 0 28 28">
+                                            <path d="M4 14l8 7L24 7"></path>
+                                        </svg>
+                                    </span>
+                                    <p class="checkbox__textwrapper">Phone (checked by default)</p>
+                                </label>
+                            </div>
+                            </fieldset>
+                            <button type="submit" class="submit-button">Confirmer</button>
                     </form>
                 </div>
             </div>
@@ -93,6 +95,8 @@
                 <a href="https://www.linkedin.com/in/mattis-lefranc-adam-04a7a42bb/" target="_blank">LinkedIn</a>
             </div>
             <p>&copy; 2025 Mattis Lefranc-Adam. All rights reserved.</p>
+            <p>Version: 1.1.5</p>
+
         </div>
     </footer>
 
@@ -101,4 +105,5 @@
         AOS.init({ once: true, duration: 800 });
     </script>
 </body>
+
 </html>

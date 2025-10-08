@@ -75,10 +75,12 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
-  --nav-bg: rgba(255, 255, 255, 0.7); /* Variable locale pour la couleur de fond */
+  --nav-bg: rgba(255, 255, 255, 0.7);
+  /* Variable locale pour la couleur de fond */
   background-color: var(--nav-bg);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px); /* Pour la compatibilité avec Safari */
+  -webkit-backdrop-filter: blur(10px);
+  /* Pour la compatibilité avec Safari */
   border-bottom: 1px solid var(--border-color);
   padding: 1rem 0;
   z-index: 100;
@@ -181,7 +183,8 @@ body {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  letter-spacing: -1px; /* Rapproche légèrement les lettres pour un look plus compact. */
+  letter-spacing: -1px;
+  /* Rapproche légèrement les lettres pour un look plus compact. */
 }
 
 /**
@@ -192,7 +195,8 @@ body {
   font-size: 1.5rem;
   color: var(--secondary-text-color);
   max-width: 600px;
-  margin: 0 auto 2rem auto; /* Centre le bloc et ajoute une marge en bas. */
+  margin: 0 auto 2rem auto;
+  /* Centre le bloc et ajoute une marge en bas. */
 }
 
 /**
@@ -234,6 +238,8 @@ body {
  */
 .projects-section {
   padding: 6rem 0;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 
 /**
@@ -428,6 +434,8 @@ body {
  */
 .form-section {
   padding: 3rem 0 6rem 0;
+    margin-top: 20%;
+  margin-bottom: 20%;
 }
 
 /**
@@ -437,7 +445,7 @@ body {
  * - `max-width` et `margin: auto` le centrent et limitent sa largeur.
  */
 .form-wrapper {
-  max-width: 700px;
+  max-width: 900px;
   margin: auto;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(10px);
@@ -555,6 +563,7 @@ body {
   align-items: center;
   cursor: pointer;
 }
+
 .visuallyhidden {
   position: absolute;
   width: 1px;
@@ -565,6 +574,7 @@ body {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
+
 .checkbox__symbol {
   display: inline-flex;
   justify-content: center;
@@ -576,6 +586,7 @@ body {
   margin-right: 12px;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
+
 .icon-checkbox {
   fill: none;
   stroke: white;
@@ -585,18 +596,22 @@ body {
   transform: scale(0);
   transition: transform 0.2s ease-in-out;
 }
+
 .checkbox__textwrapper {
   margin: 0;
-  user-select: none; 
+  user-select: none;
 }
-.checkbox__trigger:checked + .checkbox__symbol {
+
+.checkbox__trigger:checked+.checkbox__symbol {
   background-color: var(--accent-color);
   border-color: var(--accent-color);
 }
-.checkbox__trigger:checked + .checkbox__symbol .icon-checkbox {
+
+.checkbox__trigger:checked+.checkbox__symbol .icon-checkbox {
   transform: scale(1);
 }
-.checkbox__trigger:focus + .checkbox__symbol {
+
+.checkbox__trigger:focus+.checkbox__symbol {
   box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.2);
 }
 
@@ -606,6 +621,14 @@ body {
  */
 .about-section {
   padding: 3rem 0 6rem 0;
+  margin-top: 20%;
+  margin-bottom: 20%;
+}
+
+.timeline-section {
+  padding: 3rem 0 6rem 0;
+  margin-top: 20%;
+  margin-bottom: 20%;
 }
 
 /**
@@ -614,7 +637,8 @@ body {
  */
 .about-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr; /* La colonne de texte est 2x plus large. */
+  grid-template-columns: 2fr 1fr;
+  /* La colonne de texte est 2x plus large. */
   gap: 4rem;
   align-items: start;
 }
@@ -648,6 +672,40 @@ body {
   color: black;
 }
 
+.quote-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  border-left: 3px solid var(--accent-color);
+  padding-left: 1.5rem;
+}
+
+.quote-image {
+  width: auto;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.quote-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-content p {
+  margin: 0 0 0.5rem 0;
+  font-style: italic;
+  color: var(--secondary-text-color);
+}
+
+.quote-content footer {
+  font-weight: 500;
+  font-style: normal;
+  color: var(--primary-text-color);
+}
+
 /**
  * @section Liste des Compétences
  * @description Style de la liste (ul) des compétences.
@@ -664,8 +722,74 @@ body {
  */
 .skills-list li {
   padding: 0.8rem 0;
-  border-bottom: 1px solid var(--border-color); /* Note: --border-color-light n'est pas défini, j'utilise --border-color */
+  border-bottom: 1px solid var(--border-color);
+  /* Note: --border-color-light n'est pas défini, j'utilise --border-color */
   transition: border-color 0.3s ease;
+}
+
+.skills-section {
+  padding: 6rem 0;
+  background-color: var(--background-color);
+  margin-top: 20%;     
+  margin-bottom: 20%;
+}
+
+.skills-categories {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+
+.skill-category {
+  background-color: var(--card-background);
+  padding: 2rem;
+  border-radius: 18px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.skill-category:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--border-color);
+  position: relative;
+  color: var(--primary-text-color);
+  text-align: center;
+}
+
+.skill-category ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skill-category li {
+  background-color: var(--tag-background);
+  color: var(--secondary-text-color);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.skill-category li:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
 }
 
 /**
@@ -697,6 +821,7 @@ body {
  * est configuré en mode sombre.
  */
 @media (prefers-color-scheme: dark) {
+
   /* Redéfinit les variables de couleurs pour le mode sombre. */
   :root {
     --background-color: #1c1c1e;
