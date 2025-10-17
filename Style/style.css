@@ -184,7 +184,6 @@ body {
   font-weight: 700;
   margin-bottom: 1rem;
   letter-spacing: -1px;
-  /* Rapproche légèrement les lettres pour un look plus compact. */
 }
 
 /**
@@ -196,7 +195,6 @@ body {
   color: var(--secondary-text-color);
   max-width: 600px;
   margin: 0 auto 2rem auto;
-  /* Centre le bloc et ajoute une marge en bas. */
 }
 
 /**
@@ -822,7 +820,6 @@ body {
  */
 @media (prefers-color-scheme: dark) {
 
-  /* Redéfinit les variables de couleurs pour le mode sombre. */
   :root {
     --background-color: #1c1c1e;
     --card-background: #2c2c2e;
